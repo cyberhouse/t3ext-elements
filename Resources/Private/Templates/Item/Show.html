@@ -26,16 +26,18 @@
 
 <f:section name="elements_accordion">
 	<f:if condition="{ce.element_relation}">
-		<div class="accordion" id="accordion2">
+		<div class="panel-group accordion">
 			<f:for each="{ce.element_relation}" as="tabUid" iteration="iterator">
-				<div class="accordion-group">
-					<div class="accordion-heading">
-						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{tabUid}" href="#collapse{tabUid}">
-							<elements:record uid="{tabUid}" field="header" />
-						</a>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordion{tabUid}" href="#collapse{tabUid}">
+								<elements:record uid="{tabUid}" field="header" />
+							</a>
+						</h4>
 					</div>
-					<div id="collapse{tabUid}" class="accordion-body collapse ">
-						<div class="accordion-inner">
+					<div id="collapse{tabUid}" class="panel-collapse collapse">
+						<div class="panel-body">
 							<f:cObject typoscriptObjectPath="lib.tx_elements.contentElementRenderingWithoutHeader" data="{tabUid}" />
 						</div>
 					</div>
