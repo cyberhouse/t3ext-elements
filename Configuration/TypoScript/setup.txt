@@ -1,0 +1,45 @@
+
+lib.tt_contentWithoutHeader < lib.tt_content
+
+
+# Rendering of content elements
+lib.tx_elements.contentElementRendering = RECORDS
+lib.tx_elements.contentElementRendering {
+	tables = tt_content
+	source.current = 1
+	dontCheckPid = 1
+}
+
+# Rendering of content elements without header
+lib.tx_elements.contentElementRenderingWithoutHeader = RECORDS
+lib.tx_elements.contentElementRenderingWithoutHeader {
+	tables = tt_content
+	source.current = 1
+	dontCheckPid = 1
+
+	conf.tt_content  < lib.tt_contentWithoutHeader
+	conf.tt_content {
+		text.10 >
+		text.10 = TEXT
+		text.10.value
+		header.10 >
+		header.10 = TEXT
+		header.10.value
+		image.10 >
+		image.10 = TEXT
+		image.10.value
+		table.10 >
+		table.10 = TEXT
+		table.10.value
+		textpic.10 >
+		textpic.10 = TEXT
+		textpic.10.value
+		uploads.10 >
+		uploads.10 = TEXT
+		uploads.10.value
+		list.10 >
+		list.10 = TEXT
+		list.10.value
+	}
+}
+

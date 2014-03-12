@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for backend of elements</description>
+	</meta>
+	<data type="array">
+
+		<!--English / Default-->
+		<languageKey index="default" type="array">
+			<label index="tt_content.element_relation">Elements</label>
+			<label index="plugin.accordion">Accordion</label>
+			<label index="plugin.tab">Tabs</label>
+
+			<!--Wizards-->
+			<label index="wizard.tab.title">Tabs</label>
+			<label index="wizard.tab.description">Show content elements as tabs</label>
+			<label index="wizard.accordion.title">Accordion</label>
+			<label index="wizard.accordion.description">Show content elements as accordion</label>
+		</languageKey>
+
+		<!--German-->
+		<languageKey index="de" type="array">
+			<label index="tt_content.element_relation">Elements</label>
+			<label index="plugin.accordion">Accordion</label>
+			<label index="plugin.tab">Tabs</label>
+
+			<!--Wizards-->
+			<label index="wizard.tab.title">Tabs</label>
+			<label index="wizard.tab.description">Zeige Inhaltselemente als Tabs</label>
+			<label index="wizard.accordion.title">Accordion</label>
+			<label index="wizard.accordion.description">Zeige Inhaltselemente als Accordion</label>
+		</languageKey>
+	</data>
+</T3locallang>

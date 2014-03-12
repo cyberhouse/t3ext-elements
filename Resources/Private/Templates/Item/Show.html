@@ -1,0 +1,46 @@
+{namespace elements=Tx_Elements_ViewHelpers}
+
+<f:render section="{ce.CType}" arguments="{ce:ce}" />
+
+<f:section name="elements_tab">
+	<f:if condition="{ce.element_relation}">
+
+		<ul class="nav nav-tabs text-center">
+			<f:for each="{ce.element_relation}" as="tabUid" iteration="iterator">
+				<li class="{f:if(condition: iterator.isFirst, then: 'active')}"><a href="#tab{tabUid}" data-toggle="tab">
+					<elements:record uid="{tabUid}" field="header" />
+				</a></li>
+			</f:for>
+		</ul>
+		<div class="tab-content">
+			<f:for each="{ce.element_relation}" as="tabUid" iteration="iterator">
+				<div class="tab-pane {f:if(condition: iterator.isFirst, then: 'active')}" id="tab{tabUid}">
+					<div class="row-fluid">
+						<f:cObject typoscriptObjectPath="lib.tx_elements.contentElementRendering" data="{tabUid}" />
+					</div>
+				</div>
+			</f:for>
+		</div>
+	</f:if>
+</f:section>
+
+<f:section name="elements_accordion">
+	<f:if condition="{ce.element_relation}">
+		<div class="accordion" id="accordion2">
+			<f:for each="{ce.element_relation}" as="tabUid" iteration="iterator">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{tabUid}" href="#collapse{tabUid}">
+							<elements:record uid="{tabUid}" field="header" />
+						</a>
+					</div>
+					<div id="collapse{tabUid}" class="accordion-body collapse ">
+						<div class="accordion-inner">
+							<f:cObject typoscriptObjectPath="lib.tx_elements.contentElementRenderingWithoutHeader" data="{tabUid}" />
+						</div>
+					</div>
+				</div>
+			</f:for>
+		</div>
+	</f:if>
+</f:section>
