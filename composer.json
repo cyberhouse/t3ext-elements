@@ -2,11 +2,8 @@
 	"name": "cyberhouse-typo3/elements",
 	"version": "0.1.0",
 	"description": "Custom elements",
-	"type": "typo3-cms-extension",
+	"type": "typo3cms-extension",
 	"replace": {
 		"elements": "*"
-	},
-	"require": {
-		"typo3/cms-core": "*"
 	}
 }
