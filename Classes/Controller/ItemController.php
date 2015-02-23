@@ -39,6 +39,13 @@ class Tx_Elements_Controller_ItemController extends \TYPO3\CMS\Extbase\Mvc\Contr
 		$element = $this->configurationManager->getContentObject()->data;
 		$element['element_relation'] = explode(',', $element['element_relation']);
 
+	        foreach ($element['element_relation'] as $key => $value) {
+	            $record = $GLOBALS['TYPO3_DB']->exec_SELECTgetSingleRow('*', 'tt_content', 'deleted=0 AND hidden=0 AND uid=' . $value);
+	            if (empty($record)) {
+	                unset($element['element_relation'][$key]);
+	            }
+	        }
+
 		$this->view->assign('ce', $element);
 	}
 
